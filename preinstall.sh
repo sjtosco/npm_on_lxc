@@ -163,10 +163,10 @@ update_os() {
   msg_info "Updating Container OS"
   
   # Actualizar la lista de paquetes
-  $STD apt update -y
+  DEBIAN_FRONTEND=noninteractive $STD apt update -y -q
   
   # Actualizar los paquetes instalados
-  $STD apt dist-upgrade -y
+  DEBIAN_FRONTEND=noninteractive $STD apt dist-upgrade -y -q
   
   msg_ok "Updated Container OS"
 }
